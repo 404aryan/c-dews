@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Leaf, Sprout, TestTube2, UploadCloud, Heart, Send, Wheat, Shield, CheckCircle, LogOut } from 'lucide-react';
-import ChatAssistant from '@/components/ChatAssistant'; // Import the new component
 
 // --- Reusable Components (No Changes) ---
 const SectionTitle = ({ children }) => (<h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">{children}</h2>);
@@ -120,11 +119,6 @@ export default function Home() {
                 />
               </div>
             )}
-            
-            {/* NEW: Chat Assistant is placed here */}
-            <div className="mt-6 border-t pt-6">
-              <ChatAssistant />
-            </div>
           </div>
         </section>
 
