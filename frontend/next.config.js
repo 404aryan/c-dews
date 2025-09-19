@@ -1,13 +1,18 @@
 /** @type {import('next').NextConfig} */
+
+// Import the PWA plugin using CommonJS syntax
 const withPWA = require('next-pwa')({
   dest: 'public',
+  // This disables PWA features in development to prevent conflicts
+  disable: process.env.NODE_ENV === 'development',
   register: true,
   skipWaiting: true,
-  // We are removing the 'disable' flag to force generation in dev mode
 });
 
-const nextConfig = withPWA({
-  // your next.js config
-});
+// Your Next.js configuration
+const nextConfig = {
+  // You can add other Next.js configurations here if needed
+};
 
-module.exports = nextConfig;
+// Export the configuration wrapped with the PWA plugin
+module.exports = withPWA(nextConfig);
